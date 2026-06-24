@@ -1,0 +1,53 @@
+import os
+import time
+import getpass
+
+CLAVE= "1234"
+USER= "sato".lower().strip()
+CLAVE_root= "1332"
+while True:
+
+     user = input("ingresa el nombre verificado ").lower().strip()
+
+     #os.system("pkill -KILL -u $USER")
+    
+     if user != USER:
+       print("erroneo")
+       continue
+     
+     else:
+      print("procede")
+
+      clave = getpass.getpass("ingresa clave ")
+
+
+     if clave == CLAVE:
+      print("acierto, no seras ejecutado")
+      break
+      
+
+
+
+     else:
+     
+      print("equivocado, comenzando ejecuccion") 
+      time.sleep(3)
+      print("bloqueo a espera del usuario de poderes elevados en el sistema")
+
+      clave_super = getpass.getpass("clave de super user, para apagar las alarmas del sistema")
+             
+      if clave_super == CLAVE_root:
+       print("bienevnido jefe, falsa alarma")
+       #sistema no rompe porque la contraseña de super user fue proporcionada
+       break
+
+      else:
+       print("fallaste")
+       #Simulacion de sesion cerrada
+       break
+
+             
+     
+
+       
+       
